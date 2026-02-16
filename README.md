@@ -54,3 +54,37 @@ GitHub → Version Control
 
 This project demonstrates practical understanding of DevOps fundamentals and cluster networking.
 
+## COMMANDS USED ##
+
+# Create Docker Image
+docker build -t abbas-portfolio .
+
+# Create Kubernetes Deployment
+kubectl apply -f nginx-deployment.yaml
+
+# Create Service
+kubectl apply -f nginx-service.yaml
+
+# Verify Pods
+kubectl get pods -o wide
+
+# Verify Service
+kubectl get svc
+
+# Access Application
+curl http://<NODE-IP>:<NODE-PORT>
+
+# Git Setup
+git init
+git add .
+git commit -m "Initial commit"
+
+# Add Remote
+git remote add origin git@github.com:daniyaalabbas/abbas-k8s-portfolio.git
+
+# Push Code
+git push -u origin main
+
+# SSH Authentication Test
+ssh -T git@github.com
+
