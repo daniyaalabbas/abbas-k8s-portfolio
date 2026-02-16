@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: abbas-portfolio
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: abbas-portfolio
+  template:
+    metadata:
+      labels:
+        app: abbas-portfolio
+    spec:
+      containers:
+      - name: portfolio
+        image: nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: html
+          mountPath: /usr/share/nginx/html/index.html
+          subPath: index.html
+      volumes:
+      - name: html
+        configMap:
+          name: abbas-site
+
